@@ -1,5 +1,6 @@
 package com.example.userservice.security;
 
+import com.example.userservice.dto.UserDto;
 import com.example.userservice.service.UserService;
 import com.example.userservice.vo.RequestLogin;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -21,7 +22,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Slf4j
 public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private UserService userService;
-    private final Environment env;
+    private Environment env; //토큰에 대한 정보를 yml 파일을 통해 추가하기 위해
+
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
@@ -45,7 +47,8 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
                                             Authentication authResult) throws IOException, ServletException {
 //        super.successfulAuthentication(request, response, chain, authResult);
-        log.debug(((User) authResult.getPrincipal()).getUsername());
+        String userName = ((User) authResult.getPrincipal()).getUsername();
+        UserDto userDetails = userService.getUserDetailsByEmail(userName);
     }
 
 
