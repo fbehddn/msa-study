@@ -32,9 +32,9 @@ public class WebSecurity {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((authorize) -> authorize
-//                        .requestMatchers("/users/**").permitAll()
+                        .requestMatchers("/users/**").permitAll()
                         .requestMatchers("/actuator/**").permitAll()
-                        .requestMatchers("/healthcheck/**").permitAll()
+//                        .requestMatchers("/healthcheck/**").permitAll()
                         .requestMatchers("/error/**").permitAll()
                         .requestMatchers("/login/**").permitAll()
                         .requestMatchers("/**").access(((authentication, request) -> {
