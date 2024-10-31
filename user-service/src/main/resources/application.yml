@@ -41,6 +41,11 @@ logging:
   level:
     com.example.userservice: DEBUG
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans
 #token:
 #  expiration_time: 86400000
 #  secret: this_is_a_very_secure_and_long_long_long_long_token_user_secret_key_12345
