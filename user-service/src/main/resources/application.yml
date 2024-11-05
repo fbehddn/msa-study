@@ -4,9 +4,9 @@ server:
 spring:
   cloud:
     config:
-      name: ecommerce
+      name: user-service
   config:
-    import: optional:configserver:http://127.0.0.1:8888
+      import: optional:configserver:http://127.0.0.1:8888
   profiles:
     active: dev
   application:
@@ -26,11 +26,11 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-  datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb
-    username: sa
-    password:
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:mem:testdb
+#    username: sa
+#    password:
 
 eureka:
   instance:
