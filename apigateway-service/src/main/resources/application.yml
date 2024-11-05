@@ -102,8 +102,8 @@ spring:
                 postLogger: true
 
 
-token:
-  secret: this_is_a_very_secure_and_long_long_long_long_token_user_secret_key_12345
+#token:
+#  secret: this_is_a_very_secure_and_long_long_long_long_token_user_secret_key_12345
 
 management:
   endpoints:
