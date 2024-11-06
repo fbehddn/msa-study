@@ -7,8 +7,6 @@ spring:
       name: user-service
   config:
       import: optional:configserver:http://127.0.0.1:8888
-  profiles:
-    active: dev
   application:
     name: user-service
   rabbitmq:

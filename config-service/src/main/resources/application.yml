@@ -14,7 +14,7 @@ spring:
     config:
       server:
         native:
-          search-locations: file://${user.home}/study/workspace/msa_docs/native-file-repo
+          search-locations: file://${user.home}/study/workspace/msa-docs/native-file-repo
         git:
 #          uri: file://Users/youdong-u/study/workspace/git-local-repo
           uri: https://github.com/fbehddn/spring-cloud-config
